@@ -1,0 +1,34 @@
+:root {
+    --main-bg-color: rgb(25,25,25);
+    --element-color: rgb(30,30,30);
+    --text-color:rgb(170,170,170);
+    --title-color:rgb(230,230,230);
+    --accent-orange:rgb(227,115,85);
+    --accent-green:rgb(81,210,115);
+  }
+
+  body {
+      background-color: var(--main-bg-color);
+      padding: 30px;
+  }
+
+  h1, h2, h3, p, li {
+    font-family:"Open Sans", Arial, sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    color: var(--text-color);
+  }
+
+  main {
+      background-color: var(--element-color);
+      padding: 25px;
+      padding-left: 40px;
+  }
+
+  hr, h3{
+      color: var(--accent-orange)
+  }
+
+  li {
+      list-style: square;
+  }

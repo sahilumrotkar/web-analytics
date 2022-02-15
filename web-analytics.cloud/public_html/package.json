@@ -1,0 +1,21 @@
+{
+  "name": "data-analytics-api",
+  "version": "1.0.0",
+  "description": "and API for collecting and user data from a webpage to use for analytics",
+  "main": "analytics_endpoint.js",
+  "repository": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node analytics_endpoint.js"
+  },
+  "author": "Sahil Umrotkar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "uuid": "^8.3.2"
+  }
+}

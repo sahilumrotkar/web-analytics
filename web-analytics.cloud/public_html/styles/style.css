@@ -1,0 +1,223 @@
+:root {
+    --main-bg-color: rgb(25,25,25);
+    --element-color: rgb(30,30,30);
+    --text-color:rgb(170,170,170);
+    --title-color:rgb(230,230,230);
+    --accent-blue:rgb(69,189,223);
+    --accent-green:rgb(81,210,115);
+    --accent-red:rgb(231,80,102);
+    --accent-orange:rgb(227,115,85);
+    --accent-yellow:rgb(228,196,84);
+    
+  }
+  
+  h1, h2, h3, p, li, details{
+      font-family:"Open Sans", Arial, sans-serif;
+      font-weight: lighter;
+      font-style: normal;
+      color: var(--text-color);
+  }
+  
+  body {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    background-color: var(--main-bg-color);
+    padding: 3%;
+  }
+  
+  main {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 25px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--accent-orange);
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    color: var(--accent-orange);
+  }
+  
+  h3 {
+    text-align: center;
+    font-size: 1.25em;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 1.1em;
+    margin: 5px
+  }
+  
+  #about_text {
+    padding: 20px
+  }
+  
+  section {
+    background-color: var(--element-color);
+    border-radius: 10px;
+  }
+  
+  .grid-container-project-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "one two three";
+    grid-column-gap: 5%;
+    padding: 20px;
+  }
+  
+  .grid-container-work-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 20px;
+    justify-items: center;
+  }
+  
+  #project_1 {
+    grid-area: one;
+  }
+  
+  #project_2 {
+    grid-area: two;
+  }
+  
+  #project_3 {
+    grid-area: three;
+  }
+  
+  footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .row-flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  
+  }
+  
+  #contact_item_1 {
+    grid-area: a;
+  }
+  
+  #contact_item_2 {
+    grid-area: b;
+  }
+  
+  #contact_item_3 {
+    grid-area: c;
+  }
+  
+  .grid-contact-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "a b c";
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  
+  /* remove the default arrow next to summary tags */
+  
+  details > summary {
+    list-style: none;
+  }
+  
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  @media (max-width: 750px) {
+    .grid-container-project-summary {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:
+      "one"
+      "two"
+      "three";
+      grid-row-gap: 30px;
+      padding: 20px;
+    }
+  
+    .grid-contact-items {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas: 
+      "a"
+      "b"
+      "c";
+      justify-items: center;
+      padding: 20px;
+    }
+  }
+  
+  footer > h2 {
+    margin-bottom: 0;
+    color: var(--text-color)
+  }
+  
+  ul {
+    list-style-type: square;
+    font-size: 1.1em;
+  }
+  
+  .skill-list-wrapper h3 {
+    text-align: left;
+  }
+  
+  #project_1, #project_2, #project_3, #work_exp_1 {
+    transition: transform 0.5s;
+  } 
+  
+  #project_1:hover, #project_2:hover, #project_3:hover {
+    transition-timing-function: ease-out;
+    transform: scale(1.05, 1.05);
+    color: white;
+  } 
+  
+  #work_exp_1:hover {
+    transition-timing-function: ease-out;
+    transform: scale(1.0095, 1.0095);
+    color:white
+  }
+  
+  /* @keyframes show-details {
+    0%    {opacity: 0; padding-top: -12px;}
+    100%  {opacity: 1; padding-top: 0px}
+  } */
+  
+  @keyframes show-details {
+    0%    {opacity: 0; visibility: hidden;}
+    100%  {opacity: 1; visibility: visible;}
+  }
+  
+  details[open] > summary ~ * {
+    animation-name: show-details;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+  }
+  
+  summary {
+    text-align: center;
+    text-decoration: underline;
+  }
+  
+  footer {
+    padding-top: 35px;
+  }
+  
+  #title_header {
+    color: var(--title-color)
+  }

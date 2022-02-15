@@ -1,0 +1,47 @@
+:root {
+    --main-bg-color: rgb(25,25,25);
+    --element-color: rgb(30,30,30);
+    --text-color:rgb(170,170,170);
+    --title-color:rgb(230,230,230);
+    --accent-orange:rgb(227,115,85);
+    --accent-green:rgb(81,210,115);
+  }
+
+.hw2-files-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.hw2-files-list {
+    padding-right: 27px;
+}
+
+.hw2-files-list > p {
+    margin-left: 20px;
+}
+
+body {
+      background-color: var(--main-bg-color);
+      padding: 30px;
+}
+
+h1, h2, h3, p, li {
+    font-family:"Open Sans", Arial, sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    color: var(--text-color);
+}
+
+main {
+      background-color: var(--element-color);
+      padding: 25px;
+      padding-left: 40px;
+}
+
+hr, h3{
+      color: var(--accent-green)
+}
+
+li {
+      list-style: square;
+}

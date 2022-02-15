@@ -1,0 +1,5 @@
+.env
+.htaccess
+.DS_Store
+node_modules
+npm_debug.log
