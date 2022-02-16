@@ -4,15 +4,32 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSE 135 HW Lives!</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main_style.css" />
+    <title>Analytics Collector</title>
 </head>
 
 <body>
-    <h1>CSE 135 HW1 Lives!</h1>
-    <h2>collector.web-analytics.cloud</h2>
-    <script>
-        document.write(`Live @ ${new Date()}`);
-    </script>
+    <h1>Analytics Collector</h1>
+
+    <main>
+        <p>
+            This subdomain holds the analytics script that is injected into other pages.
+            It also serves as an endpoint for the script to store and retrieve
+            the collected data.
+        </p>
+
+        <ul>
+            <li>
+                <strong>collector.web-analytics.cloud/scripts/analytics.min.js</strong>
+                holds the minified analytics script.
+            </li>
+            <li>
+                <strong>collector.web-analytics.cloud/analytics</strong>
+                is the base route for the REST API used to perform CRUD operations
+                on the data collected from the analytics script.
+            </li>
+        </ul>
+    </main>
 
 </body>
 

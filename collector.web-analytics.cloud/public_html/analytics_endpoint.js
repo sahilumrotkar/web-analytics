@@ -36,11 +36,24 @@ app.use(cors({ origin: ['https://web-analytics.cloud', 'https://reporting.web-an
 app.set('trust proxy', 1);
 
 app.listen(port, function () {
-    console.log(`Analytics Endpoint listening at https://web-analytics.cloud:${port}`);
+    console.log(`Analytics Endpoint listening at https://collector.web-analytics.cloud:${port}`);
 });
 
 app.get('/', function (req, res) {
     res.send("Working");
+});
+
+// serve analytics script
+app.get('/analytics.min.js', function (req, res) {
+    const options = {
+        root: __dirname,
+        dotfiles: 'deny'
+    };
+    res.sendFile('/scripts/collector.js', options, function (err) {
+        if (err) {
+            console.error(err.message);
+        }
+    })
 });
 
 // static 

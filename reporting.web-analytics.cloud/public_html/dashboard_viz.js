@@ -43,7 +43,7 @@ window.addEventListener('load', () => {
     let browser_data_raw = [];
 
     // language and browser data
-    fetch('https://web-analytics.cloud/api/static/general')
+    fetch('https://collector.web-analytics.cloud/analytics/static/general')
         .then(response => {
             if (!response.ok) {
                 throw Error(response.statusText);
@@ -116,7 +116,7 @@ window.addEventListener('load', () => {
 
 
     // // dimensions data
-    fetch('https://web-analytics.cloud/api/static/dimensions')
+    fetch('https://collector.web-analytics.cloud/analytics/static/dimensions')
         .then(response => {
             if (!response.ok) {
                 throw Error(response.statusText);

@@ -57,7 +57,7 @@ data.activity.timing.currPage = window.location.pathname;
 window.addEventListener('beforeunload', () => {
     data.activity.timing.pageLeave = new Date().getTime();
     postData(
-        'https://web-analytics.cloud/api/activity/timing',
+        'https://collector.web-analytics.cloud/analytics/activity/timing',
         data.activity.timing,
         responseText => console.log(responseText)
     );
@@ -237,7 +237,7 @@ function init() {
     setInterval(
         function () {
             postActivityData(
-                'https://web-analytics.cloud/api/activity/mouseclick',
+                'https://collector.web-analytics.cloud/analytics/activity/mouseclick',
                 data.activity.mouseClicks,
                 function (responseText) {
                     data.activity.mouseClicks.shift();
@@ -250,7 +250,7 @@ function init() {
     setInterval(
         function () {
             postActivityData(
-                'https://web-analytics.cloud/api/activity/mouseposition',
+                'https://collector.web-analytics.cloud/analytics/activity/mouseposition',
                 data.activity.mousePosition,
                 function (responseText) {
                     data.activity.mousePosition.shift();
@@ -263,7 +263,7 @@ function init() {
     setInterval(
         function () {
             postActivityData(
-                'https://web-analytics.cloud/api/activity/keyup',
+                'https://collector.web-analytics.cloud/analytics/activity/keyup',
                 data.activity.keyup,
                 function (responseText) {
                     data.activity.keyup.shift();
@@ -276,7 +276,7 @@ function init() {
     setInterval(
         function () {
             postActivityData(
-                'https://web-analytics.cloud/api/activity/keydown',
+                'https://collector.web-analytics.cloud/analytics/activity/keydown',
                 data.activity.keydown,
                 function (responseText) {
                     data.activity.keydown.shift();
@@ -287,17 +287,17 @@ function init() {
     );
 
     postData(
-        'https://web-analytics.cloud/api/static/general',
+        'https://collector.web-analytics.cloud/analytics/static/general',
         data.static.general,
         response => console.log(response)
     );
     postData(
-        'https://web-analytics.cloud/api/static/dimensions',
+        'https://collector.web-analytics.cloud/analytics/static/dimensions',
         data.static.dimensions,
         response => console.log(response)
     );
     postData(
-        'https://web-analytics.cloud/api/static/connection',
+        'https://collector.web-analytics.cloud/analytics/static/connection',
         data.static.connection,
         response => console.log(response)
     );
@@ -306,7 +306,7 @@ function init() {
     const interval_id = setInterval(function () {
         if (data.performance.ready) {
             postData(
-                'https://web-analytics.cloud/api/performance',
+                'https://collector.web-analytics.cloud/analytics/performance',
                 data.performance,
                 responseText => {
                     clearInterval(interval_id);
