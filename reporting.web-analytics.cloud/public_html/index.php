@@ -36,6 +36,8 @@ if(!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true){
     <hr>
     <br>
 
+    <h2><a href="/database.html">Raw Data</a></h2>
+
     <h2>Browser Data</h2>
     <div style="height:600px; width:600px" id="barChart"></div>
 

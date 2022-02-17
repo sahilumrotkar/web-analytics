@@ -202,7 +202,7 @@ function bindActivityEvents() {
 function postData(url, body, responseHandler) {
     fetch(url, {
         method: 'POST',
-        credentials: 'same-origin',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
         },

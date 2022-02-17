@@ -3,8 +3,7 @@ const cors = require('cors');
 const session = require('express-session');
 const app = express();
 const port = 3001;
-
-// const dotenv = require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 // static
 const connection = require('./static/connection');
@@ -23,16 +22,23 @@ const timing = require('./activity/timing');
 
 const mysql = require('mysql');
 
+const corsOptions = {
+    origin: ['https://web-analytics.cloud', 'https://reporting.web-analytics.cloud'],
+    credentials: true
+}
+
+// console.log(process.env);
+
 app.use(express.json());
+app.use(cors(corsOptions));
 app.use(session({
-    secret: 'Sahil',
+    secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
-    resave: false,
+    resave: true,
     cookie: {
         secure: true,
     }
 }));
-app.use(cors({ origin: ['https://web-analytics.cloud', 'https://reporting.web-analytics.cloud'] }));
 app.set('trust proxy', 1);
 
 app.listen(port, function () {
@@ -41,6 +47,7 @@ app.listen(port, function () {
 
 app.get('/', function (req, res) {
     res.send("Working");
+    console.log(req.sessionID);
 });
 
 // serve analytics script
